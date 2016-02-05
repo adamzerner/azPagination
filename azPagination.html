@@ -1,0 +1,53 @@
+<ng-transclude></ng-transclude>
+
+<ul class="pagination">
+  <!-- start -->
+  <li>
+    <button
+      ng-click='getPage(1)'
+      ng-disabled='currentPageNumber == 1'
+    >
+      &laquo;
+    </button>
+  </li>
+
+  <!-- back -->
+  <li>
+    <button
+      ng-click='getPage(currentPageNumber - 1)'
+      ng-disabled='currentPageNumber == 1'
+    >
+      &lsaquo;
+    </button>
+  </li>
+
+  <!-- pages -->
+  <li ng-repeat='page in pagesToShow'>
+    <button
+      ng-click='getPage(page)'
+      ng-disabled="page == currentPageNumber"
+    >
+      {{ page }}
+    </button>
+  </li>
+
+  <!-- next -->
+  <li>
+    <button
+      ng-click='getPage(+currentPageNumber + 1)'
+      ng-disabled='currentPageNumber == totalPages'
+    >
+      &rsaquo;
+    </button>
+  </li>
+
+  <!-- end -->
+  <li>
+    <button
+      ng-click='getPage(totalPages)'
+      ng-disabled='currentPageNumber == totalPages'
+    >
+      &raquo;
+    </button>
+  </li>
+</ul>

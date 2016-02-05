@@ -1,0 +1,9 @@
+.pagination li {
+  list-style-type: none;
+  display: inline-block;
+  padding: ;
+}
+
+.active {
+  color: gray;
+}

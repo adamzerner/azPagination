@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="azPagination">
+  <head>
+    <script data-require="angular.js@1.4.8" data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular.js"></script>
+    <link rel="stylesheet" href="azPagination.css" />
+    <script src='azPagination.js'></script>
+    <script src="config.js"></script>
+  </head>
+
+  <body>
+    <az-pagination
+      endpoint-root='http://jsonplaceholder.typicode.com/posts/'
+      collection-name='people'
+      current-page-number='3'
+      number-of-pages-to-show-at-once='3'
+    >
+      <ul>
+        <li ng-repeat='person in $parent.people'>{{ person.name }}</li> <!-- http://stackoverflow.com/questions/16171952/access-directives-isolate-scope-from-within-transcluded-content -->
+      </ul>
+    </az-pagination>
+  </body>
+
+</html>
